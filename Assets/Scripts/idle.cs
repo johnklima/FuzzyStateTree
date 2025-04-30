@@ -16,23 +16,22 @@ public class idle : State
 
     public override float Process(float dt)
     {
-        Debug.Log(text);
+        
         foreach (State child in childStates)
         {
             float ret = child.Process(dt);
 
             if(ret > 0 )
             {
-                return 0;
-            }
-            else 
-            {
-                Debug.Log("I'm idle");
-                return 1;
-            }
-            
+                return ret;
+            }            
 
         }
-        return 0;
+
+        //if no child states are true, I can only be idle
+        Debug.Log("I'm idle");
+        return 1;
+       
+
     }
 }

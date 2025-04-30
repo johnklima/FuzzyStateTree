@@ -11,17 +11,20 @@ public class dead : State
 
     }
 
-  
+    public int health = 100; 
 
     public override float Process(float dt)
     {
-        Debug.Log(text);
+       
         foreach (State child in childStates)
         {
             float ret = child.Process(dt);
             return ret;
 
         }
-        return 0;
+        if (health <= 0)
+            return 1;
+        else
+            return 0;
     }
 }

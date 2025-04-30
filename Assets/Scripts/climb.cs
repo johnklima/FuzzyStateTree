@@ -15,20 +15,17 @@ public class climb : State
   
     public override float Process(float dt)
     {
-        Debug.Log(text);
+        
         foreach (State child in childStates)
         {
             float ret = child.Process(dt);
 
             if (ret > 0)
-                return 0;
-            else
-            {
-                return doClimb();
-            }
+                return ret;           
 
         }
-        //no kids so check if I should
+        
+
         return doClimb();
     }
 
