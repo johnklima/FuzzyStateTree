@@ -9,13 +9,17 @@ public class climb : State
     {
         text = "Climb";
         owner = _owner;
+        represent = GameObject.Instantiate(owner.GetComponent<Player>().StateTreeEmpty);
+        represent.name = text;
 
     }
 
   
     public override float Process(float dt)
     {
+        stateValue = 0;
         
+
         foreach (State child in childStates)
         {
             float ret = child.Process(dt);
@@ -37,10 +41,10 @@ public class climb : State
             Inventory inv = owner.GetComponent<Inventory>();
             Transform obj = inv.stuff[0];
             Debug.Log("Climb Wall with " + obj.name);
-            return 1;
+            stateValue = 1; 
         }
 
-        return 0;
+        return stateValue; 
 
     }
 }

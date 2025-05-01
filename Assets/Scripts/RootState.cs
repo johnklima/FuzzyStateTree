@@ -12,6 +12,8 @@ public class RootState : State
     {
         text = "Root";
         owner = _owner;
+        represent = GameObject.Instantiate(owner.GetComponent<Player>().StateTreeEmpty);
+        represent.name = text;
 
     }
     /// <summary>

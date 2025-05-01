@@ -9,14 +9,15 @@ public class walk : State
     {
         text = "Walk";
         owner = _owner;
-
+        represent = GameObject.Instantiate(owner.GetComponent<Player>().StateTreeEmpty);
+        represent.name = text;
     }
 
    
 
     public override float Process(float dt)
     {
-
+        
 
         foreach (State child in childStates)
         {
@@ -24,6 +25,7 @@ public class walk : State
 
             if (ret > 0)
             {
+                stateValue = 0;
                 return ret;
             }
         }   
@@ -36,11 +38,13 @@ public class walk : State
         if(Mathf.Abs(h) > 0 || Mathf.Abs(v) > 0)
         {
             Debug.Log("walk H " + h + " V " + v + " " + text);
-            return 1;
+            stateValue = 1;
+            return stateValue;
         }
         else 
         {
-            return 0;
+            stateValue = 0;
+            return stateValue;
         }
       
     }

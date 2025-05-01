@@ -8,7 +8,8 @@ public class idle : State
     {
         text = "Idle";
         owner = _owner;
-
+        represent = GameObject.Instantiate(owner.GetComponent<Player>().StateTreeEmpty);
+        represent.name = text;
     }
 
  
@@ -16,6 +17,7 @@ public class idle : State
 
     public override float Process(float dt)
     {
+       
         
         foreach (State child in childStates)
         {
@@ -23,6 +25,7 @@ public class idle : State
 
             if(ret > 0 )
             {
+                stateValue = 0;
                 return ret;
             }            
 
@@ -30,8 +33,9 @@ public class idle : State
 
         //if no child states are true, I can only be idle
         Debug.Log("I'm idle");
-        return 1;
-       
+        stateValue = 1;
+        return stateValue;
+
 
     }
 }

@@ -9,7 +9,8 @@ public class run : State
     {
         text = "Run";
         owner = _owner;
-
+        represent = GameObject.Instantiate(owner.GetComponent<Player>().StateTreeEmpty);
+        represent.name = text;
     }
 
 
@@ -17,13 +18,14 @@ public class run : State
 
     public override float Process(float dt)
     {
-    
+        
         foreach (State child in childStates)
         {
             float ret = child.Process(dt);
 
             if (ret > 0)
             {
+                stateValue = 0;
                 return ret;
             }
         }
@@ -38,7 +40,8 @@ public class run : State
         if ((Mathf.Abs(h) > 0 || Mathf.Abs(v) > 0) && run)
         {
             Debug.Log("run H " + h + " V " + v + " " + text);
-            return 1;
+            stateValue = 1;
+            return stateValue;
         }
         else
         {

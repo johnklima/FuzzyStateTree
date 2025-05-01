@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
 
     RootState rootstate;
+    public Transform StateTreeEmpty;
 
     public bool climbWall = false;
 
@@ -22,17 +23,21 @@ public class Player : MonoBehaviour
             climb
         */
 
+
         dead deadstate = new dead(transform);
         idle idlestate = new idle(transform);
         walk walkstate = new walk(transform);
         run runstate = new run(transform);
         climb climbstate = new climb(transform);
+        jump jumpstate = new jump(transform,runstate, walkstate);
 
-        rootstate.childStates.Add(idlestate);
-            idlestate.childStates.Add(walkstate);            
-                walkstate.childStates.Add(runstate);
-                    runstate.childStates.Add(climbstate);
-                        climbstate.childStates.Add(deadstate);
+        rootstate.Add(idlestate);
+            idlestate.Add(walkstate);            
+                walkstate.Add(runstate);
+                walkstate.Add(jumpstate);
+                    runstate.Add(jumpstate);
+                        jumpstate.Add(climbstate);
+                            climbstate.Add(deadstate);
 
 
     }
