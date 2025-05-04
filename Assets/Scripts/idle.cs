@@ -8,8 +8,7 @@ public class idle : State
     {
         text = "Idle";
         owner = _owner;
-        represent = GameObject.Instantiate(owner.GetComponent<Player>().StateTreeEmpty);
-        represent.name = text;
+        
     }
 
  

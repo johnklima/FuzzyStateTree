@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
                         jumpstate.Add(climbstate);
                             climbstate.Add(deadstate);
 
-
+        rootstate.traverse(null);
     }
 
     // Update is called once per frame

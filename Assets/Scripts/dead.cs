@@ -8,8 +8,7 @@ public class dead : State
     {
         text = "Dead";
         owner = _owner;
-        represent = GameObject.Instantiate(owner.GetComponent<Player>().StateTreeEmpty);
-        represent.name = text;
+       
 
     }
 

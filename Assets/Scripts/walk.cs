@@ -9,8 +9,7 @@ public class walk : State
     {
         text = "Walk";
         owner = _owner;
-        represent = GameObject.Instantiate(owner.GetComponent<Player>().StateTreeEmpty);
-        represent.name = text;
+        
     }
 
    

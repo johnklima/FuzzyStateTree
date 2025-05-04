@@ -5,13 +5,11 @@ using UnityEngine;
 public class climb : State
 {
 
-    public climb(Transform _owner)
+    public  climb(Transform _owner)
     {
         text = "Climb";
         owner = _owner;
-        represent = GameObject.Instantiate(owner.GetComponent<Player>().StateTreeEmpty);
-        represent.name = text;
-
+        
     }
 
   

@@ -15,8 +15,7 @@ public class jump : State
         owner = _owner;
         runstate = _runstate;
         walkstate = _walkstate; 
-        represent  = GameObject.Instantiate(owner.GetComponent<Player>().StateTreeEmpty);
-        represent.name = text;
+       
 
     }
     public override float Process(float dt)

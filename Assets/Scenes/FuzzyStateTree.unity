@@ -1044,6 +1044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: RootState
   owner: {fileID: 0}
+  represent: {fileID: 0}
   childStates: []
   stateValue: 0
 --- !u!1 &1474205034
@@ -1344,6 +1345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2011715286}
+  - component: {fileID: 2011715287}
   m_Layer: 0
   m_Name: StateTree Empty
   m_TagString: Untagged
@@ -1366,6 +1368,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2011715287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011715285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272750ef2331a7b47b2664fba398caee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
