@@ -12,8 +12,8 @@ public class RootState : State
     {
         text = "Root";
         owner = _owner;
-        geom = GameObject.Instantiate(owner.GetComponent<Player>().StateTreeEmpty);
-        geom.name = text;
+       // geom = GameObject.Instantiate(owner.GetComponent<Player>().StateTreeEmpty);
+       // geom.name = text;
 
     }
     /// <summary>

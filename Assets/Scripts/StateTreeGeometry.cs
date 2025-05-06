@@ -19,11 +19,22 @@ public class StateTreeGeometry : MonoBehaviour
     public void setState(State _state)
     {
         state = _state;
+
+        stateName = state.text;
+        stateValue = state.stateValue;
+        Debug.Log("Geom assignment " + stateName + " " + stateValue);
+
     }
     // Update is called once per frame
     void Update()
     {
-        stateName = state.text;
-        stateValue = state.stateValue;
+        if(true)
+        {
+            stateName = state.text;
+            stateValue = state.stateValue;
+        }
+
+
+        
     }
 }

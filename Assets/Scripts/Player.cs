@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    dead deadstate;
+    idle idlestate;  
+    walk walkstate;
+    run runstate;
+    climb climbstate; 
+    jump jumpstate; 
+
 
     RootState rootstate;
     public Transform StateTreeEmpty;
